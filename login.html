@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0B57D0" />
+  <title>Log in — Only Used Tesla</title>
+  <meta name="description" content="Log in to Only Used Tesla. No passwords." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="page">
+  <div class="topbar" role="note" aria-label="Announcement">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <strong>No passwords</strong>
+        <span class="dot" aria-hidden="true">•</span>
+        <span>Google or SMS</span>
+        <span class="dot" aria-hidden="true">•</span>
+        <span>We don’t sell your data</span>
+      </div>
+      <div class="topbar__right">
+        <a class="topbar__link" href="index.html">Home</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="auth-page">
+    <div class="container auth-page__inner">
+      <a class="text-link" href="index.html">← Back to home</a>
+
+      <div class="auth-card" role="region" aria-label="Login">
+        <h1 class="auth-card__title">Log in / Register</h1>
+        <p class="auth-card__subtitle">No passwords. Mobile-first.</p>
+
+        <button class="btn btn-primary btn--full" type="button" data-auth-google>
+          Continue with Google
+        </button>
+
+        <div class="divider"><span>or</span></div>
+
+        <form class="sms-form" data-auth-sms-form>
+          <label class="label" for="phone">Continue with SMS</label>
+          <div class="sms-row">
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Phone number" />
+            <button class="btn btn-secondary" type="submit">Text code</button>
+          </div>
+          <p class="micro subtle">Hook this to your Twilio Verify endpoints (not included in this static template).</p>
+        </form>
+
+        <div class="notice">
+          <strong>Privacy:</strong> we don’t sell your personal information. We charge simple fees instead.
+        </div>
+
+        <p class="micro subtle">
+          After login you can manage listings, pay for OUT-CHECK, and track cash offers.
+        </p>
+      </div>
+
+      <p class="micro subtle">
+        Need help? <a class="text-link" href="https://onlyusedtesla.com/contact-us/">Contact us</a>.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
