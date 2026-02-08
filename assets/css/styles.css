@@ -7,13 +7,16 @@ body { margin: 0; line-height: 1.45; }
 img, svg { display: block; }
 button, input { font: inherit; }
 
+/* Ensure the native [hidden] attribute always works */
+[hidden]{ display: none !important; }
+
 :root{
   --bg: #ffffff;
   --muted-bg: #F6F7F9;
   --text: #0B0F18;
   --muted: #556070;
   --border: #E3E7EE;
-  --primary: #0B57D0;
+  --primary: #111827;
   --primary-ink: #ffffff;
   --shadow: 0 10px 30px rgba(11, 15, 24, .10);
   --radius: 14px;
@@ -162,14 +165,14 @@ a:hover{ text-decoration: underline; }
   line-height: 1.2;
 }
 .btn:focus, .icon-btn:focus, .nav-toggle:focus, input:focus, summary:focus, .chip:focus{
-  outline: 3px solid rgba(11,87,208,.25);
+  outline: 3px solid rgba(17,24,39,.25);
   outline-offset: 2px;
 }
 .btn-primary{
   background: var(--primary);
   color: var(--primary-ink);
 }
-.btn-primary:hover{ filter: brightness(0.97); }
+.btn-primary:hover{ filter: brightness(0.92); }
 .btn-secondary{
   background: #fff;
   color: var(--text);
@@ -183,12 +186,13 @@ a:hover{ text-decoration: underline; }
 .btn--full{ width: 100%; }
 .btn--small{ padding: 10px 12px; font-size: 13px; border-radius: 10px; }
 .btn__meta{
-  font-weight: 800;
-  opacity: .95;
+  font-weight: 700;
   font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.35);
+  opacity: .85;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin-left: 6px;
 }
 
 .btn--desktop{ display: none; }
@@ -254,10 +258,10 @@ a:hover{ text-decoration: underline; }
   font-size: 12px;
   font-weight: 800;
   color: var(--primary);
-  background: rgba(11,87,208,.08);
+  background: rgba(17,24,39,.08);
   padding: 3px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(11,87,208,.18);
+  border: 1px solid rgba(17,24,39,.18);
 }
 
 main{ padding-bottom: 60px; }
@@ -569,8 +573,8 @@ input[type="tel"], input[type="text"]{
 }
 .notice{
   margin-top: 12px;
-  background: rgba(11,87,208,.06);
-  border: 1px solid rgba(11,87,208,.18);
+  background: rgba(17,24,39,.06);
+  border: 1px solid rgba(17,24,39,.18);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
   color: #22437A;
@@ -680,8 +684,8 @@ input[type="tel"], input[type="text"]{
   font-size: 14px;
 }
 .msg--user .msg__bubble{
-  background: rgba(11,87,208,.10);
-  border-color: rgba(11,87,208,.18);
+  background: rgba(17,24,39,.10);
+  border-color: rgba(17,24,39,.18);
 }
 .msg__bubble--card{
   background: #fff;
@@ -753,3 +757,8 @@ input[type="tel"], input[type="text"]{
 @media (prefers-reduced-motion: reduce){
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+
+/* Prevent background scroll when modal is open */
+body.modal-open{ overflow: hidden; }
+body.nav-open{ overflow: hidden; }
